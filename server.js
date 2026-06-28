@@ -8,7 +8,10 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-	origin: "http://localhost:3000",
+	origin: [
+		"http://localhost:3000",
+		"https://space.abbyw.net"
+	],
 	credentials: true
 }));
 app.use(express.json());
@@ -44,13 +47,15 @@ app.use("/auth", authRoutes);
 
 app.use("/profiles", profileRoutes);
 
+app.use((err, req, res, next) => {
 
+	console.error("ERROR:", err);
 
+	res.status(500).send(
+		"internal server error"
+	);
 
-
-
-
-
+});
 
 
 
