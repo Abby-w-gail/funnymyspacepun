@@ -16,41 +16,25 @@ function goToPage(page) {
 
 
 	if (!template) {
-		console.log("page does not exist:", page);
+
+		console.log(
+			"page does not exist:",
+			page
+		);
+
 		return;
+
 	}
 
 
-	content.innerHTML = template.innerHTML;
-	
-	
-	window.addEventListener(
-		"load",
-		()=>{
+	content.innerHTML =
+	template.innerHTML;
 
-			const path =
-			window.location.pathname;
-
-
-			if(
-				path !== "/" &&
-				path.length > 1
-			){
-
-				const username =
-				path.substring(1);
-
-
-				viewProfile(username);
-
-			}
-
-		}
-	);
 
 	updatePage(page);
 
 }
+
 
 
 function updatePage(page) {
@@ -58,38 +42,58 @@ function updatePage(page) {
 	document
 		.querySelectorAll("#navbar button")
 		.forEach(button => {
+
 			button.classList.remove("active");
+
 		});
-		
+
+
 	if (page === "profile") {
+
 		loadMyProfile();
+
 	}
-	
+
+
 	if (page === "settings") {
+
 		loadProfileEditor();
+
 	}
-	
+
+
 	if (page === "discover") {
+
 		loadDiscover();
+
 	}
-	
-	if(page === "friends") {
+
+
+	if (page === "friends") {
+
 		loadFriends();
 
 		loadFriendRequests();
+
 	}
-	
-	if(page === "messages") {
+
+
+	if (page === "messages") {
+
 		loadMessageUsers();
+
 	}
 
 
 	const pages = {
+
 		home: "Home",
 		profile: "Profile",
 		discover: "Discover",
 		messages: "Messages",
-		settings: "Settings"
+		settings: "Settings",
+		friends: "Friends"
+
 	};
 
 
@@ -99,39 +103,49 @@ function updatePage(page) {
 			.querySelectorAll("#navbar button")
 			.forEach(button => {
 
-				if (button.innerText === pages[page]) {
+				if (
+					button.innerText === pages[page]
+				) {
+
 					button.classList.add("active");
+
 				}
 
 			});
 
 	}
-}
 
+}
 
 
 
 function showLoginPage() {
 
-	const template = document.getElementById(
+	const template =
+	document.getElementById(
 		"page-login"
 	);
 
 
-	content.innerHTML = template.innerHTML;
+	content.innerHTML =
+	template.innerHTML;
 
 }
 
 
-window.addEventListener("load", () => {
 
-	console.log("URL:", window.location.pathname);
-
-});
+// initial URL handling
 
 window.addEventListener("load", () => {
 
-	const path = window.location.pathname;
+	const path =
+	window.location.pathname;
+
+
+	console.log(
+		"URL:",
+		path
+	);
 
 
 	if (
@@ -139,14 +153,23 @@ window.addEventListener("load", () => {
 		path.length > 1
 	) {
 
-		const username = path.substring(1);
+		const username =
+		path.substring(1);
+
 
 		console.log(
 			"loading profile:",
 			username
 		);
 
+
 		viewProfile(username);
+
+	}
+
+	else {
+
+		goToPage("home");
 
 	}
 
