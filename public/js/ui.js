@@ -20,8 +20,6 @@ async function updateUI() {
 		logoutButton.style.display =
 			"block";
 
-		goToPage("home");
-
 	} else {
 
 		loginStatus.innerText =

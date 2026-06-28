@@ -133,9 +133,6 @@ function showLoginPage() {
 }
 
 
-
-// initial URL handling
-
 window.addEventListener("load", () => {
 
 	const path = window.location.pathname;
@@ -153,9 +150,7 @@ window.addEventListener("load", () => {
 			username
 		);
 
-		setTimeout(() => {
-			viewProfile(username);
-		}, 0);
+		viewProfile(username);
 
 	}
 
