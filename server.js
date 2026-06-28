@@ -2,7 +2,6 @@ const express = require("express");
 const dotenv = require("dotenv");
 const cors = require("cors");
 const session = require("express-session");
-const profileRoutes = require("./routes/profiles");
 
 dotenv.config();
 
@@ -38,6 +37,8 @@ db.query("SELECT NOW()", (err, result) => {
 });
 
 const authRoutes = require("./routes/auth");
+
+const profileRoutes = require("./routes/profiles");
 
 app.use("/auth", authRoutes);
 
