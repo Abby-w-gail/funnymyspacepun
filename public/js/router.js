@@ -137,7 +137,7 @@ function showLoginPage() {
 // initial URL handling
 
 window.addEventListener("load", () => {
-
+	
 	const path =
 	window.location.pathname;
 
@@ -167,10 +167,5 @@ window.addEventListener("load", () => {
 
 	}
 
-	else {
-
-		goToPage("home");
-
-	}
-
+	
 });
