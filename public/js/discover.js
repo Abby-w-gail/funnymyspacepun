@@ -24,11 +24,8 @@ console.log("DISCOVER RESPONSE:", users);
 				<div class="user-card">
 
 
-				<a href="#"
-				onclick="viewProfile('${user.username}')">
-
-				${user.username}
-
+				<a href="/${user.username}">
+					${user.username}
 				</a>
 
 

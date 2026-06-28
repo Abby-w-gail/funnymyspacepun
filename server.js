@@ -33,6 +33,15 @@ app.get("/", (req, res) => {
 	res.sendFile(__dirname + "/public/index.html");
 });
 
+
+app.get("/:username", (req, res) => {
+
+	res.sendFile(
+		__dirname + "/public/index.html"
+	);
+
+});
+
 app.use(express.static("public"));
 
 const db = require("./database");
@@ -51,6 +60,8 @@ const profileRoutes = require("./routes/profiles");
 
 const friendRoutes = require("./routes/friends");
 
+
+
 app.use("/auth", authRoutes);
 
 app.use("/profiles", profileRoutes);
@@ -68,6 +79,7 @@ app.use((err, req, res, next) => {
 	console.error(err.stack);
 	res.status(500).send("internal server error");
 });
+
 
 
 /* this should be at bottom please */
