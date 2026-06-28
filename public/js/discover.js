@@ -6,6 +6,8 @@ async function loadDiscover() {
 
 	const users = await response.json();
 
+console.log("DISCOVER RESPONSE:", users);
+
 	const list =
 		document.getElementById(
 			"discoverList"

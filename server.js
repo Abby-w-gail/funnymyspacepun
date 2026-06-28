@@ -51,10 +51,6 @@ const profileRoutes = require("./routes/profiles");
 
 const friendRoutes = require("./routes/friends");
 
-const messageRoutes = require("./routes/messages");
-
-app.use("/messages", messageRoutes);
-
 app.use("/auth", authRoutes);
 
 app.use("/profiles", profileRoutes);
