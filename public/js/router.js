@@ -48,6 +48,14 @@ function updatePage(page) {
 	if (page === "discover") {
 		loadDiscover();
 	}
+	
+	if(page === "friends") {
+
+		loadFriends();
+
+		loadFriendRequests();
+
+	}
 
 
 	const pages = {

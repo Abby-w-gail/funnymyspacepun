@@ -49,10 +49,18 @@ const authRoutes = require("./routes/auth");
 
 const profileRoutes = require("./routes/profiles");
 
+const friendRoutes = require("./routes/friends");
+
 app.use("/auth", authRoutes);
 
 app.use("/profiles", profileRoutes);
 
+app.use("/friends", friendRoutes);
+
+
+app.get("/debug-session", (req,res)=>{
+	res.json(req.session);
+});
 	
 
 app.use((err, req, res, next) => {

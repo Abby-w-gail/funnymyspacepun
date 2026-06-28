@@ -156,6 +156,10 @@ async function viewProfile(username) {
 
 				<div id="profile-page">
 
+					<button onclick="sendFriendRequest('${data.username}')">
+						+ add friend
+					</button>
+
 					${data.profile_html}
 
 				</div>

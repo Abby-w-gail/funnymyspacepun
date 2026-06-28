@@ -241,3 +241,29 @@ input {
 .hidden {
 	display: none;
 }
+
+.friend-card,
+.friend-request,
+.user-card {
+
+	background:#ece9d8;
+
+	border:2px solid #0831d9;
+
+	padding:10px;
+
+	margin:10px;
+
+	border-radius:5px;
+
+}
+
+
+.friend-card a,
+.user-card a {
+
+	font-weight:bold;
+
+	font-size:18px;
+
+}

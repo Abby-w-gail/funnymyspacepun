@@ -19,12 +19,25 @@ async function loadDiscover() {
 
 			<p>
 
+				<div class="user-card">
+
+
 				<a href="#"
 				onclick="viewProfile('${user.username}')">
 
 				${user.username}
 
 				</a>
+
+
+				<button onclick="sendFriendRequest('${user.username}')">
+
+					add friend
+
+				</button>
+
+
+				</div>
 
 				<br>
 
