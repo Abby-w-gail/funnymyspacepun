@@ -34,15 +34,10 @@ app.get("/", (req, res) => {
 });
 
 
-app.get("/:username", (req, res) => {
-
-	res.sendFile(
-		__dirname + "/public/index.html"
-	);
-
-});
-
 app.use(express.static("public"));
+
+
+
 
 const db = require("./database");
 

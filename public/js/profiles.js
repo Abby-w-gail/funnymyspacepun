@@ -143,7 +143,7 @@ async function viewProfile(username) {
 	removeProfileCSS();
 
 	const response = await fetch(
-		"/profiles/" + encodeURIComponent(username)
+		"/profiles/" + username
 	);
 
 	const data = await response.json();

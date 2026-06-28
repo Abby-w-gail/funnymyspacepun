@@ -1,4 +1,5 @@
 const express = require("express");
+
 const router = express.Router();
 
 const db = require("../database");
@@ -11,10 +12,13 @@ const db = require("../database");
 router.get("/me", async (req, res) => {
 
 	if (!req.session.user) {
+
 		return res.status(401).json({
 			error: "not logged in"
 		});
+
 	}
+
 
 	try {
 
@@ -25,7 +29,9 @@ router.get("/me", async (req, res) => {
 				profile_html,
 				profile_css,
 				created_at
+
 			FROM users
+
 			WHERE id = $1
 			`,
 			[
@@ -33,9 +39,11 @@ router.get("/me", async (req, res) => {
 			]
 		);
 
+
 		res.json(result.rows[0]);
 
 	}
+
 	catch (err) {
 
 		console.error(err);
@@ -47,6 +55,7 @@ router.get("/me", async (req, res) => {
 	}
 
 });
+
 
 
 // =========================
@@ -56,24 +65,30 @@ router.get("/me", async (req, res) => {
 router.post("/update", async (req, res) => {
 
 	if (!req.session.user) {
+
 		return res.status(401).json({
 			error: "not logged in"
 		});
+
 	}
+
 
 	const {
 		html,
 		css
 	} = req.body;
 
+
 	try {
 
 		await db.query(
 			`
 			UPDATE users
+
 			SET
 				profile_html = $1,
 				profile_css = $2
+
 			WHERE id = $3
 			`,
 			[
@@ -83,11 +98,13 @@ router.post("/update", async (req, res) => {
 			]
 		);
 
+
 		res.json({
 			message: "profile updated"
 		});
 
 	}
+
 	catch (err) {
 
 		console.error(err);
@@ -99,6 +116,7 @@ router.post("/update", async (req, res) => {
 	}
 
 });
+
 
 
 // =========================
@@ -114,15 +132,20 @@ router.get("/discover", async (req, res) => {
 			SELECT
 				username,
 				created_at
+
 			FROM users
+
 			ORDER BY created_at DESC
+
 			LIMIT 10
 			`
 		);
 
+
 		res.json(result.rows);
 
 	}
+
 	catch (err) {
 
 		console.error(err);
@@ -134,6 +157,7 @@ router.get("/discover", async (req, res) => {
 	}
 
 });
+
 
 
 // =========================
@@ -149,9 +173,13 @@ router.get("/search/:username", async (req, res) => {
 			SELECT
 				username,
 				created_at
+
 			FROM users
+
 			WHERE username ILIKE $1
+
 			ORDER BY username
+
 			LIMIT 20
 			`,
 			[
@@ -159,9 +187,11 @@ router.get("/search/:username", async (req, res) => {
 			]
 		);
 
+
 		res.json(result.rows);
 
 	}
+
 	catch (err) {
 
 		console.error(err);
@@ -175,9 +205,10 @@ router.get("/search/:username", async (req, res) => {
 });
 
 
+
 // =========================
 // View someone's profile
-// MUST BE LAST!
+// MUST BE LAST
 // =========================
 
 router.get("/:username", async (req, res) => {
@@ -191,7 +222,9 @@ router.get("/:username", async (req, res) => {
 				profile_html,
 				profile_css,
 				created_at
+
 			FROM users
+
 			WHERE username = $1
 			`,
 			[
@@ -199,15 +232,20 @@ router.get("/:username", async (req, res) => {
 			]
 		);
 
+
 		if (result.rows.length === 0) {
+
 			return res.status(404).json({
 				error: "user not found"
 			});
+
 		}
+
 
 		res.json(result.rows[0]);
 
 	}
+
 	catch (err) {
 
 		console.error(err);
