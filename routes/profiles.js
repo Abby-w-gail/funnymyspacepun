@@ -225,7 +225,7 @@ router.get("/:username", async (req, res) => {
 
 			FROM users
 
-			WHERE username = $1
+			WHERE LOWER(username) = LOWER($1)
 			`,
 			[
 				req.params.username
