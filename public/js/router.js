@@ -125,6 +125,12 @@ function showLoginPage() {
 
 window.addEventListener("load", () => {
 
+	console.log("URL:", window.location.pathname);
+
+});
+
+window.addEventListener("load", () => {
+
 	const path = window.location.pathname;
 
 
@@ -133,9 +139,12 @@ window.addEventListener("load", () => {
 		path.length > 1
 	) {
 
-		const username =
-			path.substring(1);
+		const username = path.substring(1);
 
+		console.log(
+			"loading profile:",
+			username
+		);
 
 		viewProfile(username);
 
