@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+	<meta charset="UTF-8">
+
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0">
+
+	<title>yellow space??</title>
+
+	<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+	<header id="topbar">
+
+		<div id="logo">
+			my space, your space, PINK SPACE!!!
+		</div>
+
+		<div id="accountBar">
+
+			<span id="loginStatus">
+				not logged in
+			</span>
+
+			<button id="logoutButton"
+				onclick="logout()">
+				logout
+			</button>
+
+		</div>
+
+	</header>
+	
+	<nav id="navbar">
+
+		<button onclick="goToPage('home')">
+			Home
+		</button>
+
+		<button onclick="goToPage('profile')">
+			Profile
+		</button>
+
+		<button onclick="goToPage('discover')">
+			Discover
+		</button>
+
+		<button onclick="goToPage('messages')">
+			Messages
+		</button>
+
+		<button onclick="goToPage('settings')">
+			Settings
+		</button>
+
+	</nav>
+
+	<main id="content">
+
+	</main>
+	
+
+	<footer id="statusBar">
+
+		<span id="statusText">
+			welcome!!
+		</span>
+
+	</footer>
+
+	<!-- -------- -->
+	<!-- HOME -->
+
+	<template id="page-home">
+
+		<div class="page">
+
+			<h1>Home</h1>
+
+			<p>
+				welcome to whitespace.
+			</p>
+
+			<p>
+				this page will eventually become the feed.
+			</p>
+
+		</div>
+
+	</template>
+
+	<!-- -------- -->
+	<!-- PROFILE -->
+
+	<template id="page-profile">
+
+		<div class="page">
+
+			<div id="profileView">
+
+			</div>
+
+		</div>
+
+	</template>
+	
+	<!-- -------- -->
+	<!-- DISCOVER -->
+
+	<template id="page-discover">
+
+		<div class="page">
+
+			<h1>Discover</h1>
+
+			<input
+				id="userSearch"
+				placeholder="search usernames...">
+
+			<button onclick="searchUsers()">
+				search
+			</button>
+
+			<hr>
+			<h2>
+				newest users
+			</h2>
+
+			<div id="discoverList">
+
+			</div>
+
+
+		</div>
+
+	</template>
+
+	<!-- -------- -->
+	<!-- MESSAGES -->
+
+	<template id="page-messages">
+
+		<div class="page">
+
+			<h1>Messages</h1>
+
+			<p>
+				your conversations will appear here.
+			</p>
+
+		</div>
+
+	</template>
+
+
+
+
+
+	<!-- SETTINGS -->
+
+	<template id="page-settings">
+
+		<div class="page">
+
+			<h1>Settings</h1>
+
+			<div id="settingsContent">
+
+			</div>
+
+		</div>
+
+	</template>
+
+
+
+
+
+	<!-- LOGIN -->
+
+	<template id="page-login">
+
+		<div class="page smallPage">
+
+			<h1>Login</h1>
+
+			<input
+				id="loginUsername"
+				placeholder="Username">
+
+			<input
+				id="loginPassword"
+				type="password"
+				placeholder="Password">
+
+			<button onclick="login()">
+				Login
+			</button>
+
+			<hr>
+
+			<h2>Create Account</h2>
+
+			<input
+				id="registerUsername"
+				placeholder="Username">
+
+			<input
+				id="registerPassword"
+				type="password"
+				placeholder="Password">
+
+			<button onclick="register()">
+				Register
+			</button>
+
+			<p id="message"></p>
+
+		</div>
+
+	</template>
+
+
+	<script src="js/router.js"></script>
+
+	<script src="js/ui.js"></script>
+
+	<script src="js/auth.js"></script>
+	
+	<script src="js/profiles.js"></script>
+	
+	<script src="js/discover.js"></script>
+
+</body>
+
+</html>
