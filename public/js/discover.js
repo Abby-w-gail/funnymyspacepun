@@ -26,7 +26,6 @@ console.log("DISCOVER RESPONSE:", users);
 
 				<a href="#"
 				onclick="viewProfile('${user.username}')">
-				console.log("discover user:", user.username);
 
 				${user.username}
 
