@@ -24,6 +24,7 @@ async function loadDiscover() {
 
 				<a href="#"
 				onclick="viewProfile('${user.username}')">
+				console.log("discover user:", user.username);
 
 				${user.username}
 

@@ -104,23 +104,7 @@ router.get("/:username", async (req, res) => {
 
 });
 
-router.get("/discover", async (req, res) => {
 
-	const result = await db.query(
-		`
-		SELECT
-			username,
-			created_at
-		FROM users
-		ORDER BY created_at DESC
-		LIMIT 10
-		`
-	);
-
-
-	res.json(result.rows);
-
-});
 
 
 
@@ -141,6 +125,39 @@ router.get("/search/:username", async (req, res) => {
 
 
 	res.json(result.rows);
+
+});
+
+router.get("/discover", async(req,res)=>{
+
+	try{
+
+		const users=await db.query(
+			`
+			SELECT username, created_at
+
+			FROM users
+
+			ORDER BY created_at DESC
+
+			LIMIT 10
+			`
+		);
+
+
+		res.json(users.rows);
+
+
+	}
+	catch(err){
+
+		console.log(err);
+
+		res.status(500).json({
+			error:"server error"
+		});
+
+	}
 
 });
 

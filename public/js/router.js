@@ -50,11 +50,13 @@ function updatePage(page) {
 	}
 	
 	if(page === "friends") {
-
 		loadFriends();
 
 		loadFriendRequests();
-
+	}
+	
+	if(page === "messages") {
+		loadMessageUsers();
 	}
 
 

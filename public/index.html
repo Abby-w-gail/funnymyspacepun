@@ -9,7 +9,7 @@
 	<meta name="viewport"
 		content="width=device-width, initial-scale=1.0">
 
-	<title>yellow space??</title>
+	<title>greenspace</title>
 
 	<link rel="stylesheet" href="style.css">
 
@@ -20,7 +20,7 @@
 	<header id="topbar">
 
 		<div id="logo">
-			my space, your space, PINK SPACE!!!
+			space, like a social space not like stars n stuff
 		</div>
 
 		<div id="accountBar">
@@ -151,16 +151,31 @@
 
 	<template id="page-messages">
 
-		<div class="page">
+		<h1>messages</h1>
 
-			<h1>Messages</h1>
 
-			<p>
-				your conversations will appear here.
-			</p>
+		<div id="conversation">
 
 		</div>
 
+
+		<div class="send-box">
+
+			<input 
+				id="messageInput"
+				placeholder="type a message..."
+			>
+			
+			<div id="userList">
+
+			</div>
+
+
+			<button onclick="sendCurrentMessage()">
+				send
+			</button>
+
+			
 	</template>
 
 
@@ -255,6 +270,10 @@
 
 
 	</template>
+	
+
+	
+	
 
 
 	<script src="js/router.js"></script>
@@ -268,6 +287,8 @@
 	<script src="js/discover.js"></script>
 	
 	<script src="js/friends.js"></script>
+	
+	<script src="js/messages.js"></script>
 
 </body>
 

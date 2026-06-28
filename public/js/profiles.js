@@ -159,6 +159,10 @@ async function viewProfile(username) {
 					<button onclick="sendFriendRequest('${data.username}')">
 						+ add friend
 					</button>
+					
+					<button onclick="openConversation('${data.username}')">
+						send message
+					</button>
 
 					${data.profile_html}
 
