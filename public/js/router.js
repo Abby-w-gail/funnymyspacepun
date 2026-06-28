@@ -137,15 +137,8 @@ function showLoginPage() {
 // initial URL handling
 
 window.addEventListener("load", () => {
-	
-	const path =
-	window.location.pathname;
 
-
-	console.log(
-		"URL:",
-		path
-	);
+	const path = window.location.pathname;
 
 
 	if (
@@ -153,19 +146,17 @@ window.addEventListener("load", () => {
 		path.length > 1
 	) {
 
-		const username =
-		path.substring(1);
-
+		const username = path.substring(1);
 
 		console.log(
 			"loading profile:",
 			username
 		);
 
-
-		viewProfile(username);
+		setTimeout(() => {
+			viewProfile(username);
+		}, 0);
 
 	}
 
-	
 });
