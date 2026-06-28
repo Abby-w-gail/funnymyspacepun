@@ -121,3 +121,24 @@ function showLoginPage() {
 	content.innerHTML = template.innerHTML;
 
 }
+
+
+window.addEventListener("load", () => {
+
+	const path = window.location.pathname;
+
+
+	if (
+		path !== "/" &&
+		path.length > 1
+	) {
+
+		const username =
+			path.substring(1);
+
+
+		viewProfile(username);
+
+	}
+
+});

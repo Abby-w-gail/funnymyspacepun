@@ -78,12 +78,7 @@ async function searchUsers() {
 
 		<p>
 
-			<a href="#"
-			onclick="viewProfile('${user.username}')">
-
-			${user.username}
-
-			</a>
+			<a href="/${user.username}">
 
 		</p>
 
